@@ -90,12 +90,12 @@ class NoticeSerializer(serializers.ModelSerializer):
         model = Notice
         fields = '__all__'
 
-
 """SESSION SERIALIZER"""
 class SessionYearSerializer(serializers.ModelSerializer):
     class Meta:
         model = SessionYear
         fields = '__all__'
+        
 
 
 

@@ -9,7 +9,7 @@ from mainapp.classRoom.classesSubjects import classRoom, Subject
 from mainapp.attendence.attendenceModel import ClassRoutine, StudentAttendance
 from mainapp.payment.paymentModel import invoice, payment, invoice_category
 from mainapp.examination.examModel import Exam, StudentAppearedExam, mark, StudentResult
-
+from . models import Notice
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
@@ -63,3 +63,5 @@ admin.site.register(StudentAppearedExam)
 admin.site.register(invoice)
 admin.site.register(payment)
 admin.site.register(invoice_category)
+
+admin.site.register(Notice)

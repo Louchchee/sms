@@ -61,6 +61,10 @@ urlpatterns =[
     path('api/add-invoice/', add_invoice),
     path('api/payment-update',  update_invoice_create_payment),
 
+
+    #My Testing and Experiments To Remove Later 
+    path('create-notice/', createNotice, name='create-notice'),
+
 ]
 
 

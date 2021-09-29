@@ -3,6 +3,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from sms import settings
+
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 #Token Auth SimpleJwt
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -19,6 +22,7 @@ urlpatterns = [
     path('', include('mainapp.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path(r'ckeditor/', include('ckeditor_uploader.urls')),
     path('docs/', include_docs_urls(title='SMSGaria')),
     path('api/', get_schema_view(
         title="SMSGariaAcademy",
@@ -29,3 +33,6 @@ urlpatterns = [
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+

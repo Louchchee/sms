@@ -3,6 +3,7 @@ from mainapp.models import SessionYear
 from mainapp.students.studentModel import student
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from . forms import noticeForm
 # Create your views here.
 # @api_view(['GET'])
 # def apiOverView(request):
@@ -108,3 +109,19 @@ def save_update_payments(request):
             return redirect('success')
         except:
             raise Exception('Not Saved')
+
+
+def createNotice(request):
+    form = noticeForm()
+    if request.method == 'POST':
+        print(request.POST)
+        form = noticeForm(request.POST)
+        
+        form.is_valid()
+        form.save()
+        return HttpResponse("Sumission Successful")
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'notice.html', context)

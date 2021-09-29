@@ -3,6 +3,11 @@ from random import choices
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField 
+
+
+
 
 """Session Year Model"""
 class SessionYear(models.Model):
@@ -59,11 +64,12 @@ class ProfileImage(models.Model):
 """Notice Model"""
 class Notice(models.Model):
     data = (
-        (1, 'Yes'),
-        (0, 'No')
+        ('Yes', 'Yes'),
+        ('No' , 'No')
     )
     notice_id = models.AutoField(primary_key=True)
     notice_title = models.CharField(max_length=100, null=True, blank=True)
-    notice = models.TextField(null=True, blank=True)
-    date = models.DateTimeField()
-    status = models.CharField(choices=data,max_length=10, blank=True, null=True)
+    notice = RichTextUploadingField(default=None)
+    date = models.DateField()
+    status = models.CharField(choices=data, max_length=10, blank=True, null=True)
+

@@ -39,4 +39,4 @@ class RoomAllotment(models.Model):
         blank=True,
         on_delete=models.CASCADE,
         null=True)
-    room_allotted = models.BooleanField(default=False)
+    alloted = models.BooleanField(default=False)

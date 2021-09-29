@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'ckeditor',
+    'ckeditor_uploader',
+    'django_cleanup.apps.CleanupConfig',
 
 
     #our app
@@ -211,3 +214,20 @@ SIMPLE_JWT = {
 
 
 USE_TZ = True
+
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+
+CKEDITOR_RESTRICT_BY_DATE = True
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_BROWSE_SHOW_DIRS  = True
+
+CKEDITOR_FORCE_JPEG_COMPRESSION  = True
+CKEDITOR_IMAGE_QUALITY = 50
+X_FRAME_OPTIONS = 'SAMEORIGIN'
