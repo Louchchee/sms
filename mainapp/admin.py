@@ -3,13 +3,13 @@ from django.contrib import admin
 from mainapp.parents.parentsModel import parent
 from mainapp.students.studentModel import student, enroll
 
-from mainapp.transport.transportModel import transport
+from mainapp.transport.transportModel import transport, SchoolBus
 from mainapp.teacher.teacherModel import teacher
 from mainapp.classRoom.classesSubjects import classRoom, Subject
 from mainapp.attendence.attendenceModel import ClassRoutine, StudentAttendance
 from mainapp.payment.paymentModel import invoice, payment, invoice_category
 from mainapp.examination.examModel import Exam, StudentAppearedExam, mark, StudentResult
-from . models import Notice
+from . models import Notice, CustomUser
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
@@ -22,10 +22,6 @@ class ParentAdmin(admin.ModelAdmin):
 @admin.register(student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('student_id', 'customuser','birthday', 'phone')
-
-# @admin.register(dormitory)
-# class DormitoryAdmin(admin.ModelAdmin):
-#     list_display = ('dormitory_id', 'name', 'number_of_room', 'description')
 
 @admin.register(transport)
 class TransportAdmin(admin.ModelAdmin):
@@ -65,3 +61,5 @@ admin.site.register(payment)
 admin.site.register(invoice_category)
 
 admin.site.register(Notice)
+
+admin.site.register(SchoolBus)

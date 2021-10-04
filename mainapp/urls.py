@@ -8,7 +8,9 @@ from mainapp.students.api import StudentViewSet, EnrollmentViewSet
 from mainapp.classRoom.api import classRoomViewSet, SubjectViewSet, sectionViewSet
 from mainapp.examination.api import ExamViewSet, StudentResultViewset, GradeViewSet, MarkViewSet, StudentAppearedViewSet
 
-from mainapp.transport.api import TransportViewSet
+from mainapp.transport.api import TransportViewSet, ReservationViewSet, BusViewSet
+
+
 from mainapp.teacher.api import teacherViewSet
 from mainapp.attendence.api import RoutineViewSet, StudentAttendanceViewSet
 from mainapp.payment.api import InvoiceViewSet, PaymentViewSet, add_invoice, update_invoice_create_payment
@@ -29,6 +31,10 @@ router.register('api/hostel', HostelViewSet)
 router.register('api/room-allotment', RoomAllotmentViewSet)
 
 router.register('api/transport',TransportViewSet )
+router.register('api/bus', BusViewSet )
+router.register('api/reserve-bus', ReservationViewSet)
+
+
 router.register('api/section', sectionViewSet)
 router.register('api/teacher',teacherViewSet )
 router.register('api/notice',NoticeViewSet )

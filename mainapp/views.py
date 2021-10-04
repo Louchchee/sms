@@ -24,7 +24,7 @@ def index(request):
         'session_year': session_year,
         'category' : category,
         }
-    return render(request, 'add_invoice.html', context)
+    return render(request, 'base.html', context)
 
             
 def success(request):

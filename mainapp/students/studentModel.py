@@ -1,7 +1,7 @@
 from django.db import models
 from mainapp.models import CustomUser
 from mainapp.parents.parentsModel import parent
-from mainapp.transport.transportModel import transport
+
 import uuid
 from mainapp.classRoom.classesSubjects import classRoom, section
 from mainapp.models import SessionYear
@@ -46,7 +46,6 @@ class student(models.Model):
     # class_id = models.ForeignKey(classRoom, on_delete = models.CASCADE, default=None, null=True, blank=True)#FK
     # section = models.ForeignKey(section, on_delete=models.CASCADE, default=None, null=True, blank=True) #FK
     parent = models.ForeignKey(parent, on_delete=models.CASCADE, default=None, null=True, blank=True)      #FK
-    transport = models.ForeignKey(transport, on_delete=models.SET_NULL, default=None,null=True, blank=True) #FK
     # running_year = models.ForeignKey(Settings, on_delete=models.CASCADE) #default=get_running_year)  #FK
     class Meta:
         verbose_name_plural = "Students"
